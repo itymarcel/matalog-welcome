@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+:root {
+	--text-colour:black;
+    --link-colour: black;
+    --thin-line-colour: #999;
+    --site-width: 90vw;
+    --site-max-width: 1280px;
+    --base-spacing: 14px;
+}
+
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-colour);
+    font-size: 14px;
+    line-height: 22px;
+    background-color:#E9E6E2;
+}
+
+::-moz-selection,
+::selection {
+    background-color: #FFEA00;
+}
+
+* {
+    position: relative;
+}
+
+.italic {
+    font-style: italic;
+}
+
+a {
+    color: var(--link-colour);
+    opacity: 1;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+section article {
+    margin-bottom: calc(var(--base-spacing) * 3);
+}
+
+section article.two-columns {
+    column-count: 2;
+    column-gap: calc(var(--base-spacing) * 5);
+}
+
+@media only screen and (max-width: 700px) {
+    section article.two-columns {
+        column-count: 1;
+        column-gap: 0;
+    }
+}  
+
+
+
+main {
+    width: var(--site-width);
+    max-width: var(--site-max-width);
+    margin: 0px auto 0px auto;
+}
+
+section.logo {
+    --logo-size: 8em;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    margin: var(--logo-size) auto var(--logo-size) auto;
+    background: url('../res/matalog_logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+section.introduction {
+    font-size: 3em;
+    line-height: 1.2em;
+}
+
+section.looking-for-people {
+    max-width: 800px;
+}
+
+section.looking-for-people .community-links {
+    font-size: 1.5em;
+}
+
+section.looking-for-people .community-links span {
+    padding-left: calc(var(--base-spacing) * 2);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 20%;
+    margin-right: calc(var(--base-spacing) * 2);
+}
+
+section.looking-for-people .community-links .discord {
+    background-image: url('../res/discord.svg');
+}
+
+section.looking-for-people .community-links .linkedin {
+    background-image: url('../res/linkedin.svg');
+}
+
+section.explanation {
+    margin-top: calc(var(--base-spacing) * 10);
+    margin-bottom: calc(var(--base-spacing) * 10);
+    padding-top: calc(var(--base-spacing) * 2);
+    padding-bottom: calc(var(--base-spacing) * 2);
+    border-top: 1px solid var(--thin-line-colour);
+    border-bottom: 1px solid var(--thin-line-colour);
+}
+section.explanation article {
+    margin-bottom: 0px;
+}
+
+footer {
+    width: var(--site-width);
+    max-width: var(--site-max-width);
+    margin: 0px auto 0px auto;
+    opacity: 0.5;
+    text-align: center;
+}
+
+/*
+section.introduction .abstract-illustration {
+    width: 30%;
+    height: 500px;
+    margin: 100px auto 100px auto;
+    background: url('../res/material_illustration.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+*/
