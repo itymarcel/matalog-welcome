@@ -52,7 +52,10 @@ section article.two-columns {
     column-gap: calc(var(--base-spacing) * 5);
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
     section article.two-columns {
         column-count: 1;
         column-gap: 0;
