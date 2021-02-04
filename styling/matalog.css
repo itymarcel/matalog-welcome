@@ -3,6 +3,7 @@
 :root {
 	--text-colour:black;
     --link-colour: black;
+    --highlight-colour: #FFEA00;
     --thin-line-colour: #999;
     --site-width: 90vw;
     --site-max-width: 1280px;
@@ -13,7 +14,7 @@ html, body {
     font-family: 'Open Sans', sans-serif;
     color: var(--text-colour);
     font-size: 14px;
-    line-height: 22px;
+    line-height: 24px;
     background-color:#E9E6E2;
 }
 
@@ -30,6 +31,14 @@ html, body {
     font-style: italic;
 }
 
+.highlighted {
+    background-color: var(--highlight-colour);
+}
+
+.greyed {
+    opacity: 0.5;
+}
+
 a {
     color: var(--link-colour);
     opacity: 1;
@@ -38,9 +47,13 @@ a {
 a:hover {
     text-decoration: none;
 }
-
+h2 {
+    font-weight: normal;
+    margin-bottom: calc(var(--base-spacing) * 3);
+}
 h3 {
     font-size: 1em;
+    margin-top: 0px;
 }
 
 section article {
@@ -69,15 +82,36 @@ main {
     max-width: var(--site-max-width);
     margin: 0px auto 0px auto;
 }
-
+.scroll_observer {
+    position:absolute;
+    top:10px;
+}
 section.logo {
     --logo-size: 8em;
-    width: var(--logo-size);
-    height: var(--logo-size);
+
+    position: sticky;
+    
+    top: var(--logo-size);
+    width: calc(var(--logo-size) * 3);
+    height: calc(var(--logo-size) * 2);
     margin: var(--logo-size) auto var(--logo-size) auto;
     background: url('../res/matalog_logo.svg');
     background-size: contain;
     background-repeat: no-repeat;
+    
+    filter: blur(0px);
+    transform: scale(1, 1);
+    transform-origin: center;
+
+    transition: all 145ms ease-in-out;
+    transition-property: transform, opacity, top, filter;
+    transition-timing-function: cubic-bezier(0.250, 0.250, 0.055, 1.005);
+}
+
+section.logo.small {
+    transform: scale(0.8, 0.8);
+    filter: blur(3px);
+    opacity: 0.15;
 }
 
 section.introduction {
