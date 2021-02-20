@@ -81,13 +81,16 @@ section article.two-columns {
 
 
 main {
-    width: var(--site-width);
-    max-width: var(--site-max-width);
-    margin: 0px auto 0px auto;
+    width: 100%;
 }
 .scroll_observer {
     position:absolute;
     top:10px;
+}
+section {
+    width: var(--site-width);
+    max-width: var(--site-max-width);
+    margin: 0px auto 0px auto;
 }
 section.logo {
     --logo-size: 8em;
@@ -147,7 +150,8 @@ section.looking-for-people .community-links .linkedin {
 }
 
 section.system-illustration {
-    
+    width: 100%;
+    max-width: 100%;
     margin-bottom: calc(var(--base-spacing) * 10);
     padding-top: calc(var(--base-spacing) * 2);
     padding-bottom: calc(var(--base-spacing) * 2);
@@ -155,9 +159,7 @@ section.system-illustration {
 }
 
 section.system-illustration div.illustration {
-    width: 120%;
-    max-width: 100vw;
-    margin-left: -10%;
+    width: 100%;
     height: 70vh;
     background: url('../res/system.svg');
     background-position: top center;
