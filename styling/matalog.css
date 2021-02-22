@@ -3,7 +3,8 @@
 :root {
 	--text-colour:black;
     --link-colour: black;
-    --highlight-colour: #FFEA00;
+    --highlight-colour: #ffb2af;
+    --highlight-colour2: #29cc69;
     --thin-line-colour: #999;
     --site-width: 90vw;
     --site-max-width: 1280px;
@@ -35,16 +36,24 @@ html, body {
 }
 
 .highlighted {
-    background-color: var(--highlight-colour);
+    border-bottom: 2px solid var(--highlight-colour);
+}
+
+.highlighted2 {
+    border-bottom: 2px solid var(--highlight-colour2);
 }
 
 .greyed {
     opacity: 0.5;
 }
+.bold {
+    font-weight: 800;
+}
 
 a {
     color: var(--link-colour);
     opacity: 1;
+    cursor: pointer !important;
 }
 
 a:hover {
@@ -116,16 +125,25 @@ section.logo {
 
 section.logo.small {
     transform: scale(0.8, 0.8);
-    filter: blur(3px);
+    filter: blur(6px);
     opacity: 0.15;
 }
 
 section.introduction {
     font-size: 3em;
-    line-height: 1.2em;
+    line-height: 1.4em;
+}
+section.introduction.second {
+    display: block;
+    font-size: 1.8em;
+    line-height: 1.4em;
 }
 
-section.looking-for-people {
+section.introduction.second article {
+    max-width: 800px;
+}
+
+section.looking-for-people article {
     max-width: 800px;
 }
 
@@ -140,9 +158,11 @@ section.looking-for-people .community-links span {
     background-size: 20%;
     margin-right: calc(var(--base-spacing) * 2);
 }
-
 section.looking-for-people .community-links .discord {
     background-image: url('../res/discord.svg');
+}
+section.looking-for-people .community-links .mail {
+    background-image: url('../res/mail.svg');
 }
 
 section.looking-for-people .community-links .linkedin {
@@ -152,10 +172,9 @@ section.looking-for-people .community-links .linkedin {
 section.system-illustration {
     width: 100%;
     max-width: 100%;
-    margin-bottom: calc(var(--base-spacing) * 10);
+    margin-bottom: calc(var(--base-spacing) * 2);
     padding-top: calc(var(--base-spacing) * 2);
     padding-bottom: calc(var(--base-spacing) * 2);
-    border-bottom: 1px solid var(--thin-line-colour);
 }
 
 section.system-illustration div.illustration {
@@ -170,6 +189,24 @@ section.system-illustration div.illustration {
 section.call-for-work-with-us {
     font-size: 1.5em;
     text-align: center;
+}
+section.milestones {
+    margin-top: calc(var(--base-spacing)*10);
+}
+section.milestones .columns {
+    display: flex;
+    justify-content: space-between;
+}
+section.milestones .columns article {
+    border-top: 2px solid black;
+    width: 100%;
+    margin-right: calc(var(--base-spacing)*5);
+}
+section.milestones .columns article.done {
+    opacity: 0.3;
+}
+section.milestones .columns article p {
+    max-width: 200px;
 }
 
 section.explanation {
