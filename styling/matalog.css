@@ -170,8 +170,8 @@ section.looking-for-people .community-links .linkedin {
 }
 
 section.system-illustration {
-    width: 100%;
-    max-width: 100%;
+    width: var(--site-width);
+    max-width: var(--site-max-width);
     margin-bottom: calc(var(--base-spacing) * 2);
     padding-top: calc(var(--base-spacing) * 2);
     padding-bottom: calc(var(--base-spacing) * 2);
@@ -184,6 +184,23 @@ section.system-illustration div.illustration {
     background-position: top center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+section.system-illustration-explanations {
+    display: none;
+}
+section.system-illustration-explanations .system-detail {
+    display: flex;
+}
+
+section.system-illustration-explanations .system-detail .illustration {
+    flex: 1;
+    min-height: 400px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+section.system-illustration-explanations .system-detail .description {
+    flex: 1;
 }
 
 section.call-for-work-with-us {
