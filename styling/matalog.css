@@ -214,6 +214,7 @@ section.milestones .columns {
     display: flex;
     justify-content: space-between;
 }
+
 section.milestones .columns article {
     border-top: 2px solid black;
     width: 100%;
@@ -226,7 +227,23 @@ section.milestones .columns article p {
     max-width: 200px;
 }
 
+@media only screen 
+  and (max-width: 750px) {
+    section.milestones .columns {
+        display: block;
+    }
+    section.milestones .columns article {
+        margin-right: 0px;
+        margin-bottom: calc(var(--base-spacing) * 5);
+    }
+    section.milestones .columns article p {
+        max-width: 100%;
+    }
+}
+
+
 section.explanation {
+    display: none;
     margin-top: calc(var(--base-spacing) * 10);
     margin-bottom: calc(var(--base-spacing) * 10);
     padding-top: calc(var(--base-spacing) * 10);
@@ -241,7 +258,7 @@ section.explanation article {
 footer {
     width: var(--site-width);
     max-width: var(--site-max-width);
-    margin: 0px auto calc(var(--base-spacing) * 2) auto;
+    margin: calc(var(--base-spacing) * 5) auto calc(var(--base-spacing) * 2) auto;
     opacity: 0.5;
     text-align: center;
 }
