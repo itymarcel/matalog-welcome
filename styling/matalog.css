@@ -204,16 +204,28 @@ section.system-illustration div.illustration {
     background-position: left center;
     background-repeat: no-repeat;
     background-size: contain;
+    width: var(--site-width);
+    max-width: var(--site-max-width);
+    height: calc(var(--site-width)/2);
+    max-height: calc(var(--site-max-width)/2);
 }
 
 section.system-illustration .mobile-scroll-indicator {
     display: none;
 }
 
-@media only screen and (max-width: 750px), not all and (max-device-width: 750px) {
+@media only screen and (max-width: 750px) {
+    section.system-illustration {
+        width: 100%;
+    }
     section.system-illustration div.illustration {
-        width: var(--site-width);
-        height: calc(var(--site-width)/11*4);
+        background-image: url('../res/system_mobile.svg');
+        --illu-width: 96vw;
+        width: var(--illu-width);
+        margin: 0px auto 0px auto;
+        height: calc(var(--illu-width)/2*3);
+        max-height: calc(var(--illu-width)/2*3);
+        background-position: center;
     }
 }
 
@@ -221,22 +233,22 @@ section.system-illustration .mobile-scroll-indicator {
   and (max-device-width: 750px) {
     section.system-illustration {
         width: 100%;
-        max-width: 100%;
-        overflow-y: hidden;
-        overflow-x: scroll;
     }
 }
 @media only screen
     and (max-device-width: 750px) 
     and (orientation: portrait) {
         section.system-illustration div.illustration {
-            --height: 80vh;
-            width: calc(var(--height)/4*11);
-            height: var(--height);
+            background-image: url('../res/system_mobile.svg');
+            --illu-width: 96vw;
+            width: var(--illu-width);
+            margin: 0px auto 0px auto;
+            height: calc(var(--illu-width)/2*3);
+            max-height: calc(var(--illu-width)/2*3);
             background-position: center;
         }
         section.system-illustration .mobile-scroll-indicator {
-            display: block;
+            display: none;
             position: absolute;
             width: 10px;
             height: 10px;
@@ -270,11 +282,14 @@ section.system-illustration .mobile-scroll-indicator {
     and (orientation: landscape) {
         section.system-illustration {
             width: var(--site-width);
+            padding-top: 0px;
+            padding-bottom: calc(var(--base-spacing) * 1);
+            margin-bottom: calc(var(--base-spacing) * 1);
         }
         section.system-illustration div.illustration {
             --width: var(--site-width);
             width: var(--width);
-            height: calc(var(--width)/11*4);
+            height: calc(var(--width)/2);
             background-position: center;
         }
 }
@@ -374,6 +389,14 @@ footer {
     margin: calc(var(--base-spacing) * 5) auto calc(var(--base-spacing) * 2) auto;
     opacity: 0.5;
     text-align: center;
+}
+
+@media only screen 
+  and (max-device-width: 750px) {
+    footer {
+        font-size:0.5em;
+        line-height: 1.4em;
+    }
 }
 
 /*
