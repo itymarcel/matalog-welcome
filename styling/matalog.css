@@ -168,7 +168,7 @@ section.looking-for-people article {
 }
 
 .community-links {
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 section.looking-for-people .community-links span {
@@ -187,6 +187,41 @@ section.looking-for-people .community-links .mail {
 
 section.looking-for-people .community-links .linkedin {
     background-image: url('../res/linkedin.svg');
+}
+
+section.supporters {
+    display: flex;
+    align-items: center;
+    margin-top: calc(var(--base-spacing) * 5);
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-size: 1.8em;
+}
+@media only screen 
+  and (max-width: 750px) {
+      section.supporters {
+          display: block;
+      }
+}
+section.supporters article {
+    margin-right: calc(var(--base-spacing) * 2);
+}
+section.supporters .supporter-logos {
+    display: flex;
+}
+section.supporters .supporter-logos a {
+    width: calc(var(--base-spacing) * 5);
+    height: calc(var(--base-spacing) * 5);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: calc(var(--base-spacing) * 2);
+
+}
+
+section.supporters .supporter-logos a:hover {
+    transform: scale3d(1.1, 1.1, 1);
 }
 
 section.system-illustration {
@@ -317,7 +352,7 @@ section.call-for-work-with-us {
     text-align: center;
 }
 section.milestones {
-    margin-top: calc(var(--base-spacing)*10);
+    margin-top: calc(var(--base-spacing)* 10);
 }
 section.milestones h2 {
     font-size: 1.8em;
